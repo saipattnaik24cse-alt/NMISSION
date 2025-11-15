@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offer Details - NMISSION</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .offer-box {
+      background-color: #111;
+      border: 2px solid #444;
+      display: inline-block;
+      padding: 30px 50px;
+      border-radius: 10px;
+    }
+
+    .offer-box h2 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .offer-box p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .back-btn {
+      background-color: #222;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="offer-box">
+    <h2 id="offerTitle"></h2>
+    <p id="offerDesc"></p>
+    <p><strong id="offerValid"></strong></p>
+    <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+
+  <script>
+    const offer = JSON.parse(localStorage.getItem("selectedOffer"));
+    if (offer) {
+      document.getElementById("offerTitle").textContent = offer.title;
+      document.getElementById("offerDesc").textContent = offer.desc;
+      document.getElementById("offerValid").textContent = "Validity: " + offer.valid;
+    } else {
+      document.querySelector(".offer-box").innerHTML = "<h2>No Offer Selected</h2>";
+    }
+  </script>
+
+</body>
+</html>

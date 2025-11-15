@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="/css/products.css">
+    <script defer src="/js/products.js"></script>
+</head>
+
+<body>
+
+    <h1 class="section-title">NEW ARRIVALS</h1>
+
+    <div class="product-grid">
+
+        <!-- Product 1 -->
+        <a href="/product-detail?product=im" class="product-card">
+            <img src="/images/im.webp">
+            <h3>Goodman White Oversized Tee</h3>
+            <p class="old-price">Rs. 999</p>
+            <p class="new-price">Rs. 799</p>
+        </a>
+
+        <!-- Product 2 -->
+        <a href="/product-detail?product=kanisk" class="product-card">
+            <img src="/images/kanisk.webp">
+            <h3>Fight Club Oversized Tee</h3>
+            <p class="old-price">Rs. 999</p>
+            <p class="new-price">Rs. 799</p>
+        </a>
+
+        <!-- Product 3 -->
+        <a href="/product-detail?product=M_4B" class="product-card">
+            <img src="/images/M_4B.webp">
+            <h3>Sopranos Oversized Tee</h3>
+            <p class="old-price">Rs. 999</p>
+            <p class="new-price">Rs. 799</p>
+        </a>
+
+        <!-- Product 4 -->
+        <a href="/product-detail?product=M_6B" class="product-card">
+            <img src="/images/M_6B.webp">
+            <h3>Nightcrawler Acidwash Oversized Tee</h3>
+            <p class="old-price">Rs. 999</p>
+            <p class="new-price">Rs. 799</p>
+        </a>
+
+    </div>
+
+
+    <h1 class="section-title">100% RECYCLED</h1>
+
+    <div class="product-grid">
+
+        <!-- Product 5 -->
+        <a href="/product-detail?product=M_1B" class="product-card">
+            <img src="/images/M_1B.webp">
+            <h3>Killswitch Engage Tee</h3>
+            <p class="old-price">Rs. 999</p>
+            <p class="new-price">Rs. 799</p>
+        </a>
+
+        <!-- Product 6 -->
+         <a href="/product-detail?product=M_6B" class="product-card">
+            <img src="/images/M_6B.webp">
+            <h3>Nightcrawler Acidwash Oversized Tee</h3>
+            <p class="old-price">Rs. 999</p>
+            <p class="new-price">Rs. 799</p>
+        </a>
+        <script>
+if (!localStorage.getItem("sessionId")) {
+    localStorage.setItem("sessionId", "guest_" + Math.random().toString(36).substr(2, 9));
+}
+</script>
+

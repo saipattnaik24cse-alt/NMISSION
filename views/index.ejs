@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMISSION</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    /* Offer bar styling */
+    .offer-bar {
+      background-color: #111;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      position: fixed;
+      top: 70px; /* Below header */
+      width: 100%;
+      z-index: 5;
+      cursor: pointer;
+    }
+
+    .offer-bar span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollOffers 15s linear infinite;
+    }
+
+    @keyframes scrollOffers {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="header-bar">
+    <div class="nav-left">
+      <span>MEN &#9660;</span>
+      <span>WOMEN &#9660;</span>
+      <span>KIDS &#9660;</span>
+    </div>
+
+    <!-- Logo in center -->
+    <a href="/" class="logo">NMISSION</a>
+
+    <!-- ✅ Updated user icon link -->
+    <a href="/login" class="user-icon">&#128100;</a>
+  </div>
+
+  <!-- RUNNING OFFER BAR -->
+  <div class="offer-bar" id="offerBar">
+    <span id="offerText"></span>
+  </div>
+
+  <!-- HERO SECTION -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>WE'RE BACK WITH OUR NEW ARRIVALS!</h1>
+      <a href="/login">
+        <button class="shop-btn">SHOP NOW</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- ✅ Script Path Updated for Express -->
+  <script src="/js/index.js"></script>
+</body>
+</html>

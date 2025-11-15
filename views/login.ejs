@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Glass UI</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+
+<div class="glass-container">
+
+    <h2 class="title">Welcome Back</h2>
+    <p class="subtitle">Login to continue</p>
+
+    <div class="social-buttons">
+        <button class="social google">
+            <img src="https://img.icons8.com/color/48/google-logo.png"/>
+            Continue with Google
+        </button>
+        <button class="social apple">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/mac-os.png"/>
+            Continue with Apple
+        </button>
+        <button class="social facebook">
+            <img src="https://img.icons8.com/fluency/48/facebook.png"/>
+            Continue with Facebook
+        </button>
+    </div>
+
+    <div class="divider"><span>or</span></div>
+
+    <!-- ONLY ONE FORM -->
+    <form action="/login" method="POST" id="loginForm" class="login-form">
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <div class="password-box">
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+                <span class="toggle-password material-symbols-outlined" onclick="togglePassword()">visibility</span>
+            </div>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <p class="signup-text">
+        Don't have an account?
+        <a href="/signup">Create Account</a>
+    </p>
+
+</div>
+
+<script>
+function togglePassword() {
+    const pass = document.getElementById("password");
+    const icon = document.querySelector(".toggle-password");
+
+    if (pass.type === "password") {
+        pass.type = "text";
+        icon.textContent = "visibility_off";
+    } else {
+        pass.type = "password";
+        icon.textContent = "visibility";
+    }
+}
+</script>
+
+</body>
+</html>

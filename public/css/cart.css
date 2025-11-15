@@ -1,0 +1,251 @@
+/* /css/cart.css */
+
+/* /css/cart.css */
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* --- BACKGROUND IMAGE SETUP --- */
+  background-image: url('/images/frontpg.jpeg'); /* <-- CHANGE THIS FILENAME IF YOURS IS DIFFERENT */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* This keeps the background still while scrolling */
+  
+  margin: 0;
+  padding: 40px 20px;
+  color: #f0f0f0; /* Set default text color to light grey for readability */
+  min-height: 100vh; /* Ensure body covers the full screen height */
+}
+
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* --- FROSTED GLASS EFFECT BOX --- */
+.content-box {
+  /* This creates the glass effect */
+  background: rgba(10, 10, 10, 0.55); /* Dark, semi-transparent background */
+  backdrop-filter: blur(12px);          /* This is the magic blur effect! */
+  -webkit-backdrop-filter: blur(12px);  /* For Safari compatibility */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle edge to catch the light */
+  border-radius: 8px;
+  padding: 30px;
+}
+
+/* --- LEFT & RIGHT COLUMNS --- */
+.cart-section {
+  flex: 2; 
+}
+.summary-section {
+  flex: 1;
+}
+
+.cart-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border */
+  padding-bottom: 15px;
+}
+
+.section-title {
+  color: #ffffff;
+}
+
+.header-links a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 12px;
+}
+.header-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* --- CART ITEM STYLING --- */
+.cart-card {
+  display: flex;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-img {
+  width: 90px;
+  height: 110px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+.cart-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.cart-info .brand { font-size: 12px; color: #bbbbbb; margin-bottom: 10px; display: block; }
+.cart-meta { font-size: 13px; color: #bbbbbb; margin-bottom: 15px; }
+.action-links { font-size: 11px; color: #bbbbbb; cursor: pointer; }
+.action-links span:hover { text-decoration: underline; }
+
+.cart-actions { display: flex; align-items: flex-start; gap: 30px; }
+.unit-price { font-size: 14px; color: #f0f0f0; }
+.total-price { font-weight: 700; font-size: 16px; min-width: 80px; text-align: right; color: #ffffff; }
+
+/* Quantity Buttons */
+.qty-selector { display: flex; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 3px; }
+.qty-btn { background: transparent; border: none; padding: 5px 10px; cursor: pointer; font-size: 14px; color: #f0f0f0; }
+.qty-val { padding: 5px 10px; font-size: 14px; border-left: 1px solid rgba(255, 255, 255, 0.2); border-right: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* --- SUMMARY SECTION --- */
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 14px; color: #cccccc; }
+.summary-divider { border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 20px 0; }
+.summary-total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.total-label { font-weight: 700; font-size: 16px; display: flex; flex-direction: column; color: #ffffff; }
+.total-label small { font-weight: 400; font-size: 11px; color: #cccccc; }
+#totalFinal { font-size: 22px; font-weight: 700; color: #ffffff; }
+
+/* Comment Box */
+.comment-box label { color: #cccccc; font-size: 14px; }
+.comment-box textarea { 
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  height: 60px;
+  margin-top: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  border-radius: 4px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+.checkout-btn:hover { opacity: 0.8; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-wrapper { flex-direction: column; }
+  .cart-card { flex-direction: column; }
+  .cart-actions { margin-top: 15px; justify-content: space-between; width: 100%; }
+}
+
+/* === ADD THIS TO THE END OF /css/cart.css === */
+
+/* --- CHECKOUT MODAL STYLES --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 500px;
+  padding: 25px;
+  /* Re-using the glass effect */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+  line-height: 1;
+}
+.close-btn:hover { color: #fff; }
+
+/* Form Styling */
+.checkout-form .form-row {
+  display: flex;
+  gap: 20px;
+}
+.checkout-form .form-group {
+  flex: 1;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.checkout-form label {
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: #ccc;
+}
+.checkout-form input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Payment Options */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 4px;
+}
+.payment-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+.summary-of-address {
+    font-size: 12px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 2px solid #fff;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+/* Modal Buttons */
+.secondary-btn {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}

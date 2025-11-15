@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout - NMISSION</title>
+  <link rel="stylesheet" href="css/checkout.css" />
+</head>
+<body>
+
+<h1 class="title">Checkout</h1>
+
+<div id="checkoutContainer" class="checkout-box">
+  Loading your items...
+</div>
+
+<div class="summary-box">
+  <h2>Order Summary</h2>
+  <p id="subtotal"></p>
+  <p id="delivery">Delivery: FREE</p>
+  <h3 id="grandTotal"></h3>
+
+  <button id="proceedBtn" class="pay-btn">Proceed to Payment</button>
+</div>
+
+<!-- PAYMENT + ADDRESS POPUP -->
+<div id="paymentPopup" class="popup">
+  <div class="popup-content">
+    <h2>Enter Delivery Address</h2>
+
+    <input type="text" id="userName" placeholder="Full Name">
+    <input type="text" id="userAddress" placeholder="Address">
+    <input type="text" id="userPhone" placeholder="Phone Number">
+
+    <h3>Select Payment Method</h3>
+
+    <label><input type="radio" name="pay" checked> UPI</label><br>
+    <label><input type="radio" name="pay"> Cash on Delivery</label><br>
+    <label><input type="radio" name="pay"> Card Payment</label><br>
+
+    <button id="confirmOrder" class="confirm-btn">Confirm Order</button>
+    <button id="closePopup">Cancel</button>
+  </div>
+</div>
+
+<script src="js/product-detail.js"></script>
+</body>
+</html>

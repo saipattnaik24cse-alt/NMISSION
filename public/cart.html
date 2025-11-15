@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bag - NMISSION</title>
+  <link rel="stylesheet" href="/css/cart.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="page-wrapper">
+  
+  <!-- LEFT COLUMN - SHOPPING BAG -->
+  <div class="content-box cart-section">
+    <div class="cart-header-row">
+      <h2 class="section-title">My Bag (<span id="cartCount">0</span> items)</h2>
+      <div class="header-links">
+        <a href="#">Email my bag</a> | <a href="#">Save to wishlist</a>
+      </div>
+    </div>
+    <div id="cartItemsBox"></div>
+  </div>
+
+  <!-- RIGHT COLUMN - SUMMARY -->
+  <div class="content-box summary-section">
+    <h3>Summary</h3>
+    <div class="summary-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+    <div class="summary-row"><span>Discount</span><span id="discount">-₹0</span></div>
+    <div class="summary-row"><span>Shipping</span><span id="shipping">₹0</span></div>
+    <div class="summary-divider"></div>
+    <div class="summary-total-row">
+      <span class="total-label">TOTAL <small>Including Tax</small></span>
+      <span id="totalFinal">₹0</span>
+    </div>
+    <div class="comment-box">
+      <label>Leave a comment</label>
+      <textarea placeholder="Special instructions..."></textarea>
+    </div>
+    <button id="goPay" class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<!-- ================================== -->
+<!-- == CHECKOUT MODAL (NEWLY ADDED) == -->
+<!-- ================================== -->
+<div id="checkoutModal" class="modal-overlay">
+  <div class="modal-content content-box">
+    
+    <div class="modal-header">
+      <h2 id="modalTitle">Shipping Address</h2>
+      <span id="closeModal" class="close-btn">&times;</span>
+    </div>
+
+    <!-- STEP 1: ADDRESS FORM -->
+    <div id="addressStep">
+      <form id="addressForm" class="checkout-form">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input type="text" id="fullName" required></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" required></div>
+        </div>
+        <div class="form-group"><label>Address</label><input type="text" id="address" required></div>
+        <div class="form-row">
+          <div class="form-group"><label>City</label><input type="text" id="city" required></div>
+          <div class="form-group"><label>Pincode</label><input type="text" id="pincode" required></div>
+        </div>
+        <button type="submit" class="checkout-btn">Continue to Payment</button>
+      </form>
+    </div>
+
+    <!-- STEP 2: PAYMENT FORM -->
+    <div id="paymentStep" style="display: none;">
+        <div class="payment-options">
+          <label><input type="radio" name="paymentMethod" value="Card" checked> Credit/Debit Card</label>
+          <label><input type="radio" name="paymentMethod" value="UPI"> UPI</label>
+          <label><input type="radio" name="paymentMethod" value="COD"> Cash on Delivery</label>
+        </div>
+        <p class="summary-of-address" id="addressSummary"></p>
+        <button id="confirmOrderBtn" class="checkout-btn">Confirm & Place Order</button>
+        <button id="backToAddressBtn" class="secondary-btn">Back to Address</button>
+    </div>
+
+    <!-- STEP 3: ORDER SUCCESS -->
+    <div id="successStep" style="display:none;">
+        <h3>✅ Order Placed Successfully!</h3>
+        <p>Thank you for shopping with NMISSION. Your order details have been logged.</p>
+        <button id="shopAgainBtn" class="checkout-btn">Continue Shopping</button>
+    </div>
+
+  </div>
+</div>
+<!-- End of Checkout Modal -->
+
+
+<script src="/js/cart.js"></script>
+</body>
+</html>

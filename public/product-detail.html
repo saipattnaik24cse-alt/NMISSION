@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details - NMISSION</title>
+  <!-- <link rel="stylesheet" href="/css/products.css"> -->
+   <link rel="stylesheet" href="/css/product-detail.css">
+   <style>
+  body {
+    background: url("/images/frontpg.jpeg") no-repeat center center fixed;
+    background-size: cover;
+  }
+</style>
+
+</head>
+<body>
+
+  <header class="header-bar">
+    <nav class="nav-left">
+      <ul class="nav-links">
+        <li><a href="products.html">MEN &#9660;</a></li>
+        <li><a href="#">WOMEN &#9660;</a></li>
+        <li><a href="#">KIDS &#9660;</a></li>
+      </ul>
+    </nav>
+    <div class="logo">NMISSION</div>
+    <a href="login.html" class="user-icon">&#128100;</a>
+  </header>
+
+  <main class="product-page-container">
+<div class="product-image-column">
+    <img id="productImg" src="" alt="Product" style="width:350px;border-radius:12px;">
+</div>
+
+
+
+</a>
+    </div>
+
+    <div class="product-details-column">
+  
+      <h1 id="productName"></h1>
+
+      <div class="price-section">
+        <span class="original-price" id="originalPrice"></span>
+        <span class="sale-price" id="salePrice"></span>
+        <span class="sale-tag">SALE</span>
+      </div>
+
+      <p id="discountInfo" style="color:#ffcc00;font-weight:bold;"></p>
+      <p id="moneySaved" style="color:lightgreen;font-weight:bold;"></p>
+
+      <div class="quantity-section">
+        <label>Quantity:</label>
+        <button id="decreaseBtn">−</button>
+        <span id="quantityValue">1</span>
+        <button id="increaseBtn">+</button>
+      </div>
+
+      <p id="totalPrice" style="margin-top:10px;font-weight:bold;"></p>
+
+   <div class="size-section">
+  <label>Size</label>
+  <div class="size-buttons">
+    <button class="size-btn">S</button>
+    <button class="size-btn">M</button>
+    <button class="size-btn">L</button>
+    <button class="size-btn">XL</button>
+  </div>
+</div>
+
+
+      <!-- ✅ Add to Cart button -->
+      <button id="addToCartBtn" class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </main>
+
+  <!-- 🛒 Added to Cart Popup -->
+  <div id="cartPopup" class="popup">
+    <div class="popup-content">
+      <h2>🛒 Added to Cart Successfully!</h2>
+      <p id="cartMsg"></p>
+      <button id="proceedPaymentBtn">Proceed to Payment</button>
+      <button id="closePopup">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- 💳 Payment Options Popup -->
+  <div id="paymentPopup" class="popup">
+    <div class="popup-content">
+      <h2>Select Payment Method</h2>
+
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="paymentMethod" value="card" checked> Credit / Debit Card
+        </label><br>
+        <label>
+          <input type="radio" name="paymentMethod" value="upi"> UPI Payment
+        </label><br>
+        <label>
+          <input type="radio" name="paymentMethod" value="cod"> Cash on Delivery (COD)
+        </label>
+      </div>
+
+      <!-- 💳 Card Payment -->
+      <div id="cardForm" class="payment-form">
+        <label>Card Number</label><br>
+        <input type="text" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX"><br>
+        <label>Name on Card</label><br>
+        <input type="text" id="cardName" placeholder="Full Name"><br>
+        <label>Expiry</label><br>
+        <input type="text" id="expiry" placeholder="MM/YY"><br>
+        <label>CVV</label><br>
+        <input type="password" id="cvv" placeholder="***"><br>
+      </div>
+
+      <!-- 🏦 UPI Payment -->
+      <div id="upiForm" class="payment-form" style="display:none;">
+        <label>Enter UPI ID</label><br>
+        <input type="text" id="upiId" placeholder="example@upi"><br>
+      </div>
+
+      <!-- 💵 COD -->
+      <div id="codForm" class="payment-form" style="display:none;">
+        <p>Cash on Delivery selected. You can pay when your order arrives.</p>
+      </div>
+
+      <br>
+      <button id="payNowBtn">Confirm & Pay</button>
+      <button id="closePayment">Cancel</button>
+    </div>
+  </div>
+
+  <script src="/js/product-detail.js"></script>
+  <script>
+if (!localStorage.getItem("sessionId")) {
+    localStorage.setItem("sessionId", "guest_" + Math.random().toString(36).substr(2, 9));
+}
+document.querySelectorAll(".size-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+</script>
+
+
+</body>
+</html>
