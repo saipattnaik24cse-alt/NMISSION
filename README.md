@@ -1,4 +1,4 @@
-# NMISSION - Full-Stack E-Commerce Website
+# NMISSION - Full-Stack E-Commerce Website.
 
 > A complete, modern e-commerce web application for the fictional streetwear brand NMISSION. This project features a full user flow from viewing products to a multi-step, secure checkout process. It is built with a Node.js and Express backend, a MongoDB database, and a dynamic vanilla JavaScript front-end.
 
